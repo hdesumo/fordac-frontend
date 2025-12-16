@@ -3,7 +3,6 @@
 import MembreSidebar from "@/components/MembreSidebar";
 import MembreTopbar from "@/components/MembreTopbar";
 import ProtectedRouteMembre from "@/components/ProtectedRouteMembre";
-import MemberGuard from "@/components/membre/MemberGuard";
 
 export default function MembreLayout({ children }: { children: React.ReactNode }) {
   return (
