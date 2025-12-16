@@ -1,18 +1,21 @@
+import ProtectedRouteAdmin from "@/components/ProtectedRouteAdmin";
 import Sidebar from "@/components/admin/Sidebar";
 import Topbar from "@/components/admin/Topbar";
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-gray-100">
-      <Sidebar />
-      <div className="flex-1">
-        <Topbar />
-        <main className="p-6">{children}</main>
+    <ProtectedRouteAdmin>
+      <div className="flex min-h-screen bg-[#F7F7F7]">
+        <Sidebar />
+
+        <div className="flex-1 flex flex-col">
+          <Topbar />
+
+          <main className="flex-1 p-6 md:p-10">
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
+    </ProtectedRouteAdmin>
   );
 }
