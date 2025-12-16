@@ -2,37 +2,51 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const links = [
-  { href: "/admin/dashboard", label: "Dashboard" },
-  { href: "/admin/users", label: "Users" },
-  { href: "/admin/posts", label: "Posts" },
-  { href: "/admin/settings", label: "Settings" },
-];
+import {
+  LayoutDashboard,
+  MessageSquare,
+  Image,
+  Newspaper,
+  Users,
+  Settings,
+} from "lucide-react";
 
 export default function Sidebar() {
   const pathname = usePathname();
 
-  return (
-    <aside className="w-64 bg-gray-900 text-white min-h-screen">
-      <div className="p-6 text-xl font-bold border-b border-gray-700">
-        FORDAC Admin
-      </div>
+  const menu = [
+    { name: "Dashboard", icon: LayoutDashboard, href: "/admin/dashboard" },
+    { name: "Forum", icon: MessageSquare, href: "/admin/forum" },
+    { name: "Galerie", icon: Image, href: "/admin/galerie" },
+    { name: "Actualités", icon: Newspaper, href: "/admin/actualites" },
+    { name: "Membres", icon: Users, href: "/admin/membres" },
+    { name: "Paramètres", icon: Settings, href: "/admin/settings" },
+  ];
 
-      <nav className="p-4 space-y-2">
-        {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`block px-4 py-2 rounded ${
-              pathname === link.href
-                ? "bg-green-600"
-                : "hover:bg-gray-700"
-            }`}
-          >
-            {link.label}
-          </Link>
-        ))}
+  return (
+    <aside className="hidden md:flex flex-col w-64 bg-[#145331] text-white min-h-screen p-6 shadow-lg">
+      <h1 className="text-2xl font-bold mb-10 tracking-wide">FORDAC Admin</h1>
+
+      <nav className="space-y-2">
+        {menu.map((item, index) => {
+          const active = pathname.startsWith(item.href);
+          const Icon = item.icon;
+
+          return (
+            <Link
+              key={index}
+              href={item.href}
+              className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all ${
+                active
+                  ? "bg-white text-[#145331] font-semibold shadow"
+                  : "hover:bg-[#1a6a42] hover:shadow"
+              }`}
+            >
+              <Icon size={18} />
+              {item.name}
+            </Link>
+          );
+        })}
       </nav>
     </aside>
   );
