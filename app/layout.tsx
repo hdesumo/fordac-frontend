@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "FORDAC Connect",
-  description: "Portail officiel du FORDAC",
+  description: "Plateforme officielle du FORDAC",
+  generator: "FORDAC Connect",
 };
 
 export default function RootLayout({
