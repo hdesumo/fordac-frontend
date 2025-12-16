@@ -1,5 +1,6 @@
 "use client";
 
+import "../globals.css";
 import MembreSidebar from "@/components/MembreSidebar";
 import MembreTopbar from "@/components/MembreTopbar";
 import ProtectedRouteMembre from "@/components/ProtectedRouteMembre";

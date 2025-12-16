@@ -1,3 +1,4 @@
+import "../globals.css";
 import ProtectedRouteAdmin from "@/components/ProtectedRouteAdmin";
 import Sidebar from "@/components/admin/Sidebar";
 import Topbar from "@/components/admin/Topbar";
