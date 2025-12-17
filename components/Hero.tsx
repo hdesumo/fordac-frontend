@@ -17,8 +17,8 @@ export default function Hero() {
         className="object-cover"
       />
 
-      {/* OVERLAY POUR LISIBILITÉ */}
-      <div className="absolute inset-0 bg-[#0f3e20]/70"></div>
+      {/* OVERLAY RENFORCÉ POUR LISIBILITÉ */}
+      <div className="absolute inset-0 bg-[#0f3e20]/85"></div>
 
       {/* CONTENU */}
       <div className="relative z-10 h-full flex items-center justify-center px-4">
@@ -37,7 +37,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="mt-6 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-white/90"
+            className="mt-6 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed text-white/95"
           >
             Forces Démocratiques pour l’Action et le Changement —  
             un parti citoyen engagé pour une gouvernance centrée sur l’action,
@@ -49,20 +49,32 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-10 flex justify-center gap-4"
+            className="mt-10 flex flex-wrap justify-center gap-4"
           >
             <Link
               href="/adhesion"
-              className="px-8 py-4 bg-white text-[#0f3e20] rounded-xl text-lg font-semibold
-                         hover:bg-[#4ade80] transition shadow-lg"
+              className="
+                px-8 py-4 
+                bg-[#4ade80] text-[#0f3e20] 
+                rounded-xl text-lg font-semibold
+                hover:bg-[#22c55e]
+                transition shadow-lg
+                no-underline
+              "
             >
               Adhérez maintenant
             </Link>
 
             <Link
               href="/message-president"
-              className="px-8 py-4 border border-white/70 text-white rounded-xl text-lg font-semibold
-                         hover:bg-white/10 transition"
+              className="
+                px-8 py-4 
+                border border-white/80 text-white 
+                rounded-xl text-lg font-semibold
+                hover:bg-white/10 
+                transition
+                no-underline
+              "
             >
               Message du Président
             </Link>

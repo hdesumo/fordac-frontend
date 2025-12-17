@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ===============================
-   RESET / BASE
+   RESET / BASE HTML
 ================================ */
 
 html,
@@ -18,7 +18,20 @@ body {
 }
 
 /* ===============================
-   TYPOGRAPHY (prose)
+   RESET LIENS (ANTI HTML BRUT)
+================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ===============================
+   TYPOGRAPHY / PROSE
 ================================ */
 
 .prose {
@@ -42,7 +55,7 @@ body {
 }
 
 /* ===============================
-   GLOBAL COMPONENTS
+   GLOBAL CONTAINERS
 ================================ */
 
 .container {
@@ -51,12 +64,20 @@ body {
   padding: 0 1rem;
 }
 
+/* ===============================
+   CARDS
+================================ */
+
 .card {
   background-color: #ffffff;
   border-radius: 0.75rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
 }
+
+/* ===============================
+   BUTTONS (fallback non Tailwind)
+================================ */
 
 .btn {
   display: inline-flex;
@@ -151,4 +172,21 @@ th {
 
 .shadow-card {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   MARQUEE ANIMATION
+================================ */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }
