@@ -23,26 +23,31 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.className}>
 
-        {/* ===== MOBILE MENU (visible only on smartphone) ===== */}
+        {/* ===== MOBILE MENU (smartphone only) ===== */}
         <div className="md:hidden fixed top-3 left-3 z-50">
           <MobileMenu />
         </div>
 
-        {/* ===== TOP NAVBAR (desktop/tablet) ===== */}
-        <div className="hidden md:block">
-          <TopNavbar />
-        </div>
+        {/* ===== HEADER GLOBAL ===== */}
+        <header className="relative z-40">
 
-        {/* ===== MAIN NAVBAR (desktop/tablet) ===== */}
-        <div className="hidden md:block">
-          <MainNavbar />
-        </div>
+          {/* Top navbar (desktop & tablet) */}
+          <div className="hidden md:block">
+            <TopNavbar />
+          </div>
 
-        {/* ===== MARQUEE NATIONAL ===== */}
-        <MarqueeBanner />
+          {/* Main navbar (desktop & tablet) */}
+          <div className="hidden md:block">
+            <MainNavbar />
+          </div>
+
+          {/* National marquee banner */}
+          <MarqueeBanner />
+
+        </header>
 
         {/* ===== PAGE CONTENT ===== */}
-        <main className="min-h-screen pt-4">
+        <main className="min-h-screen bg-[#f9fafb]">
           {children}
         </main>
 
