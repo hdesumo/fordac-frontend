@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Hero from "@/components/Hero";
 import MediaModal from "@/components/MediaModal";
 
 export default function HomePage() {
@@ -11,30 +12,9 @@ export default function HomePage() {
     <main className="w-full overflow-x-hidden">
 
       {/* ===========================
-          HERO PRINCIPAL — Vert Foncé
+          HERO PRINCIPAL (OFFICIEL)
       ============================ */}
-      <section className="w-full bg-fordacDark text-white pt-40 md:pt-40 pb-28 md:pb-36 text-center px-4 flex flex-col justify-center">
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-          FORDAC Connect
-        </h1>
-
-        <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed opacity-90">
-          Forces Démocratiques pour l’Action et le Changement —
-          un parti citoyen engagé pour une gouvernance centrée sur l’action,
-          la justice sociale, l'intégrité et le respect de notre bien commun
-          qui est notre cher pays le Cameroun.
-        </p>
-
-        <div className="mt-10 flex justify-center">
-          <a
-            href="/adhesion"
-            className="px-8 py-4 bg-white text-fordacDark rounded-xl text-lg font-semibold 
-              hover:bg-fordacLight transition border border-white/20 shadow-lg"
-          >
-            Adhérez maintenant
-          </a>
-        </div>
-      </section>
+      <Hero />
 
       {/* ===========================
           SECTION PRÉSIDENT
@@ -63,7 +43,7 @@ export default function HomePage() {
               Sous l’impulsion du président Romaric Yebchue Semenou,
               le FORDAC incarne une vision tournée vers le progrès, la solidarité,
               la responsabilité collective, le respect mutuel, le bien-être pour tous
-              et la dignité citoyenne...
+              et la dignité citoyenne.
             </p>
           </div>
         </div>
@@ -200,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* ===========================
-          GALERIE VIDEOS
+          GALERIE VIDÉOS
       ============================ */}
       <section className="py-24 bg-[#E8F3EC] px-4">
         <h2 className="text-4xl font-extrabold text-center text-fordacGreen mb-16">
@@ -208,7 +188,7 @@ export default function HomePage() {
         </h2>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
+          {[1, 2, 3].map((i) => (
             <div
               key={i}
               className="cursor-pointer rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition"
@@ -232,7 +212,7 @@ export default function HomePage() {
       </section>
 
       {/* ===========================
-          SECTION ADHESION
+          SECTION ADHÉSION
       ============================ */}
       <section className="py-20 md:py-28 bg-fordacDark text-white text-center px-4">
         <h2 className="text-4xl font-extrabold mb-6">
@@ -240,7 +220,8 @@ export default function HomePage() {
         </h2>
 
         <p className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed opacity-90">
-          Votre engagement compte. Ensemble, bâtissons une organisation responsable...
+          Votre engagement compte. Ensemble, bâtissons une organisation responsable
+          et tournée vers l’avenir.
         </p>
 
         <a
@@ -255,6 +236,7 @@ export default function HomePage() {
       {selectedMedia && (
         <MediaModal media={selectedMedia} onClose={() => setSelectedMedia(null)} />
       )}
+
     </main>
   );
 }
